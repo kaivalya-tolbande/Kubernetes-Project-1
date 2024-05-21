@@ -1,0 +1,7 @@
+
+- hosts: worker
+  become: true
+
+  tasks:
+    - name: Join Kubernetes cluster on worker node
+      command: "{{ lookup('file', './join-command.txt') }}"
